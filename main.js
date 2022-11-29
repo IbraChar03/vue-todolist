@@ -35,7 +35,8 @@ const {createApp} = Vue;
         }
         else{
           this.tasks.unshift({
-            text: this.newTask
+            text: this.newTask,
+            done:false
           })
           this.error = false
 
@@ -47,13 +48,15 @@ const {createApp} = Vue;
         deleteTask(index){
           this.tasks.splice(index, 1)       
 
-        }
+        },
        
          
-   
    }
 
 }).mount("#app")
+
+
+
 
 
 

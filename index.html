@@ -27,9 +27,11 @@
             </div>
  
             <ul v-if="tasks.length > 0">
-                <li v-for="(task, index) in tasks" class="task">
+                <li v-for="(task, index) in tasks" class="task" :class="{ 'line': task.done }">
                {{task.text}}
+              
                <i class="fa-solid fa-trash-can del" @click="deleteTask(index)"></i>
+                
                </li>
               
             </ul>
