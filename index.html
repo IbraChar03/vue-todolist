@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    
+
+    <div id="app">  
+       
+        <div class="container">
+          <div class="inner-cont">
+            <div class="cont-inp">
+            <input type="text"  id="inp" v-model="newTask" placeholder="Aggiungi qualcosa..." @KeyUp.enter="addTask">
+
+            <div id="btn" @click="addTask">Aggiungi</div>
+            </div>
+          
+            <div id="errorId" v-if="error">
+            <strong>devi inserire almeno 5 caratteri</strong> 
+            </div>
+ 
+            <ul v-if="tasks.length > 0">
+                <li v-for="(task, index) in tasks" class="task">
+               {{task.text}}
+               <i class="fa-solid fa-trash-can del" @click="deleteTask(index)"></i>
+               </li>
+              
+            </ul>
+            <h2 v-else>La lista è vuota</h2>
+
+          </div>
+        </div>
+    </div>
+        
+    
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
