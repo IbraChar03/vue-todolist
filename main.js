@@ -5,9 +5,6 @@ const {createApp} = Vue;
     data(){
         return{
             error : false,
-            obj : {
-              text: ""
-            },
             newTask : "",
             playInterval : "",
             tasks: [
@@ -49,7 +46,7 @@ const {createApp} = Vue;
           this.tasks.splice(index, 1)       
 
         },
-       
+     
          
    }
 
