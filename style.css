@@ -109,4 +109,8 @@ ul{
     text-decoration: line-through;
   }
 
-
+.check{
+    margin-top: 5px;
+    float: right;
+    transform: scale(1.7);
+}

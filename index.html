@@ -26,11 +26,12 @@
             <strong>devi inserire almeno 5 caratteri</strong> 
             </div>
  
-            <ul v-if="tasks.length > 0">
+            <ul v-if="tasks.length > 0" @click="done">
                 <li v-for="(task, index) in tasks" class="task" :class="{ 'line': task.done }" >
                {{task.text}}
-               
+                   
                <i class="fa-solid fa-trash-can del" @click="deleteTask(index)"></i>
+               <input type="checkbox" name="" class="check" @click="checkbox(index)">
                 
                </li>
               

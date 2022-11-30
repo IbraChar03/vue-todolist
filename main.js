@@ -4,6 +4,7 @@ const {createApp} = Vue;
 
     data(){
         return{
+          click : false,
             error : false,
             newTask : "",
             playInterval : "",
@@ -14,7 +15,7 @@ const {createApp} = Vue;
               }, 
               { 
                 text: 'Fare la spesa', 
-                done: true 
+                done: false 
               }, 
               { 
                 text: 'Fare il bucato', 
@@ -46,11 +47,25 @@ const {createApp} = Vue;
           this.tasks.splice(index, 1)       
 
         },
-     
-         
+        
+        checkbox(indice){
+          var checkBox=document.getElementsByClassName("check")
+          if(checkBox[indice].checked){
+            this.tasks[indice].done = true
+            console.log(this.tasks[indice].done)
+
+          }
+          else  {
+            this.tasks[indice].done = false
+            console.log(this.tasks[indice].done)
+          }
+
+        }
+            
    }
 
 }).mount("#app")
+
 
 
 
